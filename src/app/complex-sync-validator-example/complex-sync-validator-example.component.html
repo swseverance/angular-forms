@@ -1,0 +1,40 @@
+<h3>
+  Complex Synchronous Form Control Validator
+</h3>
+
+<hr>
+
+<div style="display: flex; align-items: center">
+  <p>Select which name should be invalid:</p>
+  <label>
+    <input
+      type="radio"
+      [formControl]="invalidName"
+      value="john">
+    John
+  </label>
+  <label>
+    <input
+      type="radio"
+      [formControl]="invalidName"
+      value="pete">
+    Pete
+  </label>
+</div>
+
+<label>
+  Enter Name:
+  <input
+    type="text"
+    [formControl]="name"
+    appComplexSyncValidator
+    [invalidName]="invalidName.value">
+</label>
+
+<ul>
+  <li>Value: {{ name.value }}</li>
+  <li>Status: {{ name.status }}</li>
+  <li>Errors: {{ name.errors | json }}</li>
+  <li>Pristine: {{ name.pristine }}</li>
+  <li>Touched: {{ name.touched }}</li>
+</ul>

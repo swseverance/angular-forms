@@ -1,0 +1,27 @@
+<h3>
+  Simple Synchronous Form Control Validator
+</h3>
+
+<hr>
+
+<div>
+  <p>
+    The name 'bob' will show as an invalid name
+  </p>
+
+  <label>
+    Enter Name:
+    <input
+      type="text"
+      [formControl]="name"
+      appSimpleSyncValidator>
+  </label>
+
+  <ul>
+    <li>Value: {{ name.value }}</li>
+    <li>Status: {{ name.status }}</li>
+    <li>Errors: {{ name.errors | json }}</li>
+    <li>Pristine: {{ name.pristine }}</li>
+    <li>Touched: {{ name.touched }}</li>
+  </ul>
+</div>
