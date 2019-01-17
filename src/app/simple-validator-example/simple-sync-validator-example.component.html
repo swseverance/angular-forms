@@ -1,0 +1,32 @@
+<h3>
+  Simple Synchronous Form Control Validator
+</h3>
+
+<hr>
+
+<div>
+  <p>Three synchronous validator directives in this example</p>
+  <ul>
+    <li>1. Mark form control as required</li>
+    <li>2. Require the length to be 3 characters or greater</li>
+    <li>3. Check that the name entered is not equal to 'bob'</li>
+  </ul>
+
+  <label>
+    Enter Name:
+    <input
+      type="text"
+      [formControl]="name"
+      minlength="3"
+      required
+      appSimpleSyncValidator>
+  </label>
+
+  <ul>
+    <li>Value: {{ name.value }}</li>
+    <li>Status: {{ name.status }}</li>
+    <li>Errors: {{ name.errors | json }}</li>
+    <li>Pristine: {{ name.pristine }}</li>
+    <li>Touched: {{ name.touched }}</li>
+  </ul>
+</div>

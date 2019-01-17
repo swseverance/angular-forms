@@ -1,0 +1,33 @@
+<h3>
+  Validation Through Functions Only (Sync + Async)
+</h3>
+
+<hr>
+
+<div>
+  <p>
+    The name 'bob' will show as an invalid name after a slight delay
+  </p>
+
+  <label>
+    Enter Name:
+    <input
+      type="text"
+      [formControl]="name">
+  </label>
+
+  <ul>
+    <li>Value: {{ name.value }}</li>
+    <li>
+      Pending:
+      <span *ngIf="name.pending else notPending" style="color: red">
+        true, async validation is pending
+      </span>
+      <ng-template #notPending>false</ng-template>
+    </li>
+    <li>Status: {{ name.status }}</li>
+    <li>Errors: {{ name.errors | json }}</li>
+    <li>Pristine: {{ name.pristine }}</li>
+    <li>Touched: {{ name.touched }}</li>
+  </ul>
+</div>
