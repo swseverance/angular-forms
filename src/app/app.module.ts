@@ -12,20 +12,23 @@ import { SimpleAsyncValidatorDirective } from './simple-validator-example/simple
 import { ComplexSyncValidatorDirective } from './complex-validator-example/complex-sync-validator.directive';
 import { ComplexSyncValidatorExampleComponent } from './complex-validator-example/complex-sync-validator-example.component';
 import { ValidationWithFunctionsComponent } from './validation-with-functions/validation-with-functions.component';
+import {
+  CounterComponent,
+  CounterComponentExampleComponent
+} from './counter/counter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-
     SimpleSyncValidatorExampleComponent,
     SimpleAsyncValidatorExampleComponent,
-
     SimpleSyncValidatorDirective,
     SimpleAsyncValidatorDirective,
-
     ComplexSyncValidatorDirective,
     ComplexSyncValidatorExampleComponent,
-    ValidationWithFunctionsComponent
+    ValidationWithFunctionsComponent,
+    CounterComponent,
+    CounterComponentExampleComponent
   ],
   imports: [BrowserModule, ReactiveFormsModule],
   providers: [],
